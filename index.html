@@ -15,7 +15,7 @@
           width="100px"
         />
         <p>
-          <span class="red">the</span> <span class="orange"> flying</span
+          <span class="red">the&nbsp;</span> <span class="orange"> flying&nbsp;</span
           ><span class="green"> chef</span>
         </p>
       </div>
@@ -27,9 +27,8 @@
       </ul>
     </nav>
     <header>
-      <h1>welcome to my flying table!</h1>
+      <h1>Welcome to my flying table!</h1>
     </header>
-
     <main>
       <section class="recipe-summary">
         <h1>Today's Recipe: Cardamom Rice</h1>
@@ -44,11 +43,11 @@
         <!-- MAKE THIS BUTTON WORK! -->
         <!-- Hint: it needs to link to an id, so you will
       need to add an id to the recipe further down. -->
-        <a class="skip-to-recipe-btn" href="#">Skip to Recipe</a>
+        <a class="skip-to-recipe-btn" href="#recipe-btn">Skip to Recipe</a>
       </section>
       <section class="blog">
         <p>
-          yet another hotel room, waiting for my next flight, but I'm making the
+          Yet another hotel room, waiting for my next flight, but I'm making the
           most of it by whipping up one of my favorite dishes: cardamom rice.
         </p>
         <p>
@@ -74,7 +73,7 @@
           flavorful dish that I love to make when I'm craving some home-cooked
           food. It's versatile enough to pair with a wide range of proteins and
           veggies.
-        </p>
+        </p><hr>
         <ol>
           <h3>So, let's get started. Here's what you'll need:</h3>
 
@@ -85,7 +84,7 @@
           <li>3 cardamom pods, crushed</li>
           <li>2 cloves</li>
           <li>1 cinnamon stick</li>
-        </ol>
+        </ol><hr>
         <p>
           Now, I know what you're thinking: how on earth can you make rice in a
           hotel room? Well, it's easier than you might think. All you need is a
@@ -174,11 +173,12 @@
           and family.
         </p>
       </section>
-      <section class="current-recipe">
+      <section class="current-recipe" id="recipe-btn">
         <section>
           <h2>Cardamom Rice Recipe</h2>
-          <p>Cook Time: 20 minutes</p>
-          <p>Prep Time: 30 minutes</p>
+          <p class="cook-time">Cook Time: 20 minutes<br>
+            Prep Time: 30 minutes
+          </p>
           <h3>Ingredients</h3>
           <ul>
             <li>1 cup basmati rice</li>

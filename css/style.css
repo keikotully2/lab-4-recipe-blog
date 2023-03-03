@@ -18,16 +18,26 @@
 * {
   box-sizing: border-box;
 }
+
 /*  STEP 1: add a base font-size to the body element 
 hint: use "font-size" property */
+
 html {
+  font-size: 10px;
+  font-family: "Palatino", sans-serif;
 }
+
 /* Add margins to the body so that the content 
   doesn't reach the edges of the view screen
   hint: margin-left and right should be 'auto'
   margin-top and bottom can be zero */
+
 body {
   max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* logo styling
@@ -37,6 +47,31 @@ body {
 3. apply margins or padding to the logo to position it */
 
 .logo {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-top: 1%;
+}
+
+.logo p{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  font-family: fantasy;
+  font-style: italic;
+  font-size: 2.5rem;
+} 
+
+.red{
+  color: rgb(105, 29, 34);
+}
+
+.orange{
+   color: rgb(255, 128, 0);
+}
+
+.green{
+  color: rgb(0, 153, 51);
 }
 
 /* STYLE THE NAV BAR! */
@@ -49,20 +84,35 @@ body {
  */
 
 nav {
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap; /* Keiko: This fixed the issue of the different dimensions, such as phone device*/
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(18, 155, 183, .3);
 }
+
 /* Link List Styling:
 1. Make the ul a flex container so that the list items
 inside of it display horizontally
 2. remove the bullet point of the list items
   */
+
 nav ul {
+  display: flex;
+  flex: 2;
+  justify-content: flex-end;
+  list-style: none;
 }
+
 /* Style the list items
 1. adjust the font size (use rem units)
 2. add padding to give the links some space 
  */
 
 nav ul li {
+  font-size: 2.5rem;
+  padding: 10px;
 }
 
 /* Adjust the style of the navigation links */
@@ -73,20 +123,29 @@ nav ul li {
    */
 
 li a {
-  color: black;
+  text-decoration: none;
+  color: rgb(255, 128, 0);
+  margin-right: 10px;
+  font-weight: bold;
 }
+
 /* Alter the colors here for links that have been visited,
 are unvisited, are being clicked on, and are being hovered
 over. */
+
 li a:visited {
-  color: black;
+  color: purple;
+  text-decoration: underline;
 }
+
 li a:hover {
-  color: black;
+  color:darkorange;
+  cursor:pointer;
 }
 
 li a:active {
-  color: black;
+  color: red;
+  text-decoration: underline;
 }
 
 /* Style the header 
@@ -95,17 +154,43 @@ li a:active {
     background image   
       */
 
+/* Keiko: Background-image opacity without affecting text
+reference: https://coder-coder.com/background-image-opacity/ */
+
 header {
+  position: relative;
+  display: flex;
   background-image: url("/images/food-banner.jpg");
   background-size: cover;
+  align-items: center;
+  justify-content: center;
 }
+
+header::before{
+  position: absolute;
+  content:"";
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, .2);
+}
+
 /* Make sure the header text is visible against the 
 background image.
 1. apply a font color
 2. use some kind of background color 
 behind the text if the 
 text is hard to read. */
+
 header h1 {
+  position:relative;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 5rem;
+  height: 200px;
+  padding-top: 50px;
 }
 
 /* MAIN STYLING
@@ -114,12 +199,26 @@ header h1 {
 /* 1. make the content centered on the page.
    2. adjust the font-size, line-height, or other 
    text properties for readability. */
-/*  
 
-*/
 main {
-  max-width: 850px;
+  max-width: 830px;
+  font-size: 2rem;
+  line-height:120%
 }
+
+
+h3{
+  color: brown;
+  text-align: left;
+  text-decoration: underline;
+  line-height: 150%; /* Keiko: This fixed the issue of wrapping no text height issue in dimesion change, such as phone*/
+}
+
+ol {
+  margin-left: 50px;
+  margin-right:20px;
+  }
+
 /* Make the top "recipe summary" section stand out in some way.
 For example, change the style of the text to be different
 from other text on the page.
@@ -127,10 +226,14 @@ from other text on the page.
 2. add padding and/or margins to make the text easy to read
 3. adjust font styles, for example font-style: italic 
  */
+
 .recipe-summary {
+  padding: 5%;
 }
 
 .recipe-summary p {
+  font-size: 2rem;  
+  font-style: italic;
 }
 
 /* Style the "Skip to Recipe Button */
@@ -143,7 +246,20 @@ site just want the recipe, and will be clicking this button.
 4. add some padding so that the button text doesn't touch the 
 button's border.
  */
-.skip-to-recipe-btn a {
+
+ /* Keiko button, hover reference: https://www.w3schools.com/css/css3_buttons.asp */
+.skip-to-recipe-btn {
+  background-color: red;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 8px;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.skip-to-recipe-btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
 }
 
 /*  STYLE THE BLOG TEXT
@@ -155,7 +271,12 @@ right against the edge of the screen at any screen size
 readability*/
 
 .blog p {
+  line-height: 130%;
+  padding: 10px;
   max-width: 700px;
+  font-size: 1.8rem;
+  margin-left: 8%;
+
 }
 
 /* STYLE THE RECIPE SECTION */
@@ -170,6 +291,27 @@ readability*/
   5. create a bottom margin between this section and the footer*/
 
 .current-recipe {
+  background-color: rgba(230, 131, 98, .3);
+  border:rgb(255, 128, 0) .5rem;
+  border-style: double;
+  font-size: 2rem;
+  padding: 20px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  /* Keiko: *Issue: This width is to match the footer below on the right side.
+  However, it seems that bigger width broke the different dimension such as phone.
+  Creating the holizontal scroll bar */
+  width: 850px;
+}
+
+h2 { 
+  text-align: center;
+  text-decoration: underline;
+  
+}
+
+ .cook-time {
+  text-align: center;
 }
 
 /* Add a frame around the recipe image 
@@ -182,6 +324,18 @@ readability*/
 
 .current-recipe img {
   max-width: 450px;
+  border:rgb(255, 128, 0) solid 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption{
+  text-align: center;
+  padding-top: 30px;
+  font-style: italic;
+  font-size: large;
+  
 }
 
 /* Style the footer content
@@ -191,4 +345,12 @@ readability*/
 4. use padding or margins to make the text readable
 5. adjust the font-size  */
 footer {
+  background-color: rgba(18, 155, 183, .3);
+  color:rgb(92, 81, 81);
+  font-size: 2rem;
+  text-align: center;
+  line-height: 130%;
+  font-style: italic;
+  padding: 10px;
+  margin-bottom: 30px;
 }
