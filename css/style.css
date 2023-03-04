@@ -295,13 +295,28 @@ readability*/
   border:rgb(255, 128, 0) .5rem;
   border-style: double;
   font-size: 2rem;
-  padding: 20px;
-  padding-left: 30px;
   margin-bottom: 20px;
-  /* Keiko: *Issue: This width is to match the footer below on the right side.
+  padding-left: 10px;
+  /* Keiko: Issue with responsive design 3/3/23:
+  This width is to match the footer below on the right side.
   However, it seems that bigger width broke the different dimension such as phone.
-  Creating the holizontal scroll bar */
-  width: 850px;
+  Creating the holizontal scroll bar.
+
+  Update from the teacher 3/4/23:
+  Setting a max-width on your html elements allows their width to adjust to smaller screen sizes. 
+  ...another tool, known as "media queries," that allow us to specifically target styling for smaller screen sizes.
+  I hope to generally cover responsive design (designing for all screen sizes) 
+  
+  
+  --> The issue resolved! 3/4/23:
+  I updated by width with % percentage instead of specify to px.
+  Reference: https://www.w3schools.com/css/css_rwd_viewport.asp
+
+  3. Use CSS media queries to apply different styling for small and large screens 
+  - Setting large absolute CSS widths for page elements will cause the element to be too wide for the viewport on a smaller device. 
+  Instead, consider using relative width values, such as width: 100%. Also, be careful of using large absolute positioning values. It may cause the element to fall outside the viewport on small devices.
+  */
+  width: 100%;
 }
 
 h2 { 
@@ -328,6 +343,7 @@ h2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 }
 
 figcaption{
@@ -351,6 +367,9 @@ footer {
   text-align: center;
   line-height: 130%;
   font-style: italic;
-  padding: 10px;
   margin-bottom: 30px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  /* Adding 100% in width makes better in responsive design (other devices)but there is a gap in my apple laptop.*/
+  width: 100%;
 }
